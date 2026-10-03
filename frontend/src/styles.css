@@ -1,0 +1,320 @@
+:root {
+    --brand-blue: #0052e0;
+    --brand-blue-dark: #0a2f86;
+    --brand-green: #17a707;
+    --brand-red: #e8003a;
+    --brand-orange: #f56a0c;
+}
+body {
+    margin: 0;
+    background: #f3f6fc;
+    font-family: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+/* Dải màu lấy từ các vạch chevron trên logo trường */
+.brand-stripe {
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--brand-blue) 0 40%,
+        var(--brand-green) 40% 65%,
+        var(--brand-red) 65% 85%,
+        var(--brand-orange) 85% 100%
+    );
+}
+.brand-wrap {
+    padding: 10px 14px 12px;
+}
+.brand-authority {
+    font-size: 10.5px;
+    font-weight: 600;
+    color: #5b6478;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+    text-align: center;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #e8edf7;
+}
+.brand-block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1.25;
+}
+.brand-block img {
+    width: 44px;
+    height: 44px;
+    flex: none;
+}
+.brand-block .school-prefix {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--brand-blue-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+.brand-block .school {
+    font-weight: 800;
+    font-size: 17px;
+    white-space: nowrap;
+    color: var(--brand-blue-dark);
+    letter-spacing: 0.2px;
+}
+.brand-block .district {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--brand-green);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+.brand-role {
+    margin: 0 12px 8px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: #e6efff;
+    color: var(--brand-blue-dark);
+    font-size: 12px;
+    font-weight: 600;
+}
+.big-btn {
+    height: 64px !important;
+    font-size: 16px !important;
+    font-weight: 600;
+}
+.ant-table-cell.num {
+    text-align: center;
+}
+.clickable {
+    cursor: pointer;
+    color: var(--brand-blue);
+    text-decoration: underline dotted;
+}
+.print-only {
+    display: none;
+}
+@media print {
+    .print-only {
+        display: block !important;
+    }
+    .ant-layout-sider,
+    .ant-layout-header,
+    .no-print {
+        display: none !important;
+    }
+    .ant-layout-content {
+        padding: 0 !important;
+    }
+}
+
+/* ---------- Trang đăng nhập ---------- */
+.login-page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(380px, 1fr);
+    background: #fff;
+}
+.login-hero {
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    background: var(--brand-blue-dark);
+}
+.login-hero-photo {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: login-fade 18s infinite;
+}
+@keyframes login-fade {
+    0% { opacity: 0; transform: scale(1.04); }
+    6% { opacity: 1; }
+    33% { opacity: 1; }
+    40% { opacity: 0; transform: scale(1); }
+    100% { opacity: 0; }
+}
+.login-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, rgba(10, 47, 134, 0.55) 0%, rgba(0, 82, 224, 0.35) 45%, rgba(10, 47, 134, 0.9) 100%);
+}
+.login-hero-content {
+    position: absolute;
+    left: 48px;
+    right: 48px;
+    bottom: 56px;
+}
+.login-hero-logo {
+    width: 112px;
+    height: 112px;
+    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.35));
+}
+.login-hero-authority {
+    margin-top: 16px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    opacity: 0.92;
+}
+.login-hero-school {
+    margin-top: 4px;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.1;
+    text-transform: uppercase;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+.login-hero-district {
+    margin-top: 6px;
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 6px;
+    background: var(--brand-green);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.login-hero-tagline {
+    margin: 16px 0 4px;
+    font-size: 18px;
+    font-weight: 500;
+    opacity: 0.95;
+}
+.login-hero-founded {
+    font-size: 13px;
+    opacity: 0.8;
+}
+.login-hero-stripe {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 6px;
+}
+.login-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 24px 16px;
+}
+.login-card {
+    width: 100%;
+    max-width: 380px;
+}
+.login-card-logo {
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto;
+}
+.login-footer {
+    margin-top: 32px;
+    font-size: 12px;
+    color: #8c8c8c;
+    text-align: center;
+}
+@media (max-width: 860px) {
+    .login-page {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+    .login-hero {
+        height: 220px;
+    }
+    .login-hero-content {
+        left: 16px;
+        right: 16px;
+        bottom: 20px;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 12px;
+        align-items: center;
+    }
+    .login-hero-logo {
+        width: 64px;
+        height: 64px;
+        grid-row: span 3;
+    }
+    .login-hero-authority {
+        grid-column: 2;
+        margin: 0;
+        font-size: 10.5px;
+    }
+    .login-hero-school {
+        grid-column: 2;
+        margin: 0;
+        font-size: 19px;
+    }
+    .login-hero-district {
+        grid-column: 2;
+        justify-self: start;
+        font-size: 12px;
+        padding: 2px 8px;
+    }
+    .login-hero-tagline,
+    .login-hero-founded {
+        display: none;
+    }
+    .login-card-logo {
+        display: none;
+    }
+    .login-panel {
+        justify-content: flex-start;
+        padding-top: 24px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .login-hero-photo {
+        animation: none;
+    }
+    .login-hero-photo:first-child {
+        opacity: 1;
+    }
+}
+
+/* ---------- Banner bảng điều khiển ---------- */
+.dash-banner {
+    position: relative;
+    margin-bottom: 16px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center 40%;
+    color: #fff;
+}
+.dash-banner-inner {
+    padding: 28px 24px 22px;
+    background: linear-gradient(90deg, rgba(10, 47, 134, 0.92) 0%, rgba(0, 82, 224, 0.7) 55%, rgba(0, 82, 224, 0.15) 100%);
+}
+.dash-banner-title {
+    font-size: 22px;
+    font-weight: 700;
+}
+.dash-banner-sub {
+    margin-top: 4px;
+    opacity: 0.92;
+}
+/* Nút loại lỗi + số lượt đã nhập trong ngày */
+.vio-btn {
+    position: relative;
+}
+.vio-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 6px;
+    border-radius: 11px;
+    background: var(--brand-red);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 22px;
+    text-align: center;
+    box-shadow: 0 0 0 2px #fff;
+    pointer-events: none;
+}

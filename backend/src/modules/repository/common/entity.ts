@@ -1,0 +1,44 @@
+export const AUTH = "Auth";
+export const USER = "User";
+export const EVENT = "Event";
+export const EVENT_LOG = "EventLog";
+export const EVENT_ACCOUNT = "EventAccount";
+export const ONE_SIGNAL_USER = "OneSignalUser";
+export const NOTIFICATION = "Notification";
+export const TOPIC = "Topic";
+export const USER_TOPIC = "UserTopic";
+export const FILE = "File";
+export const SETTING = "Setting";
+export const INCREMENT = "Increment";
+export const IMPORT_SESSION = "ImportSession";
+
+export const AUDIT_LOG = "AuditLog";
+
+export const DATA_PARTITION = "DataPartition";
+export const DATA_PARTITION_USER = "DataPartitionUser";
+
+export const QUY_TAC_MA = "QuyTacMa";
+export const HAM_SINH_MA = "HamSinhMa";
+export const SCHOOL_YEAR = "SchoolYear";
+export const HOLIDAY = "Holiday";
+export const SCHOOL_CLASS = "SchoolClass";
+export const USER_ROLE = "UserRole";
+export const STUDENT = "Student";
+export const STUDENT_CLASS_HISTORY = "StudentClassHistory";
+export const ATTENDANCE_REPORT = "AttendanceReport";
+export const ABSENCE = "Absence";
+export const VIOLATION = "Violation";
+export const INCIDENT = "Incident";
+export const INCIDENT_STUDENT = "IncidentStudent";
+export const INCIDENT_PHOTO = "IncidentPhoto";
+export const WEEKLY_REPORT = "WeeklyReport";
+export const WEEKLY_REPORT_LOGBOOK_STUDENT = "WeeklyReportLogbookStudent";
+export const CONTEST = "Contest";
+export const CONTEST_ENTRY = "ContestEntry";
+export const ACTIVITY_POINT = "ActivityPoint";
+export const COMPLAINT = "Complaint";
+export const SCORING_RULE = "ScoringRule";
+export const SCORING_CRITERION = "ScoringCriterion";
+export const COMPETITION_WEEK = "CompetitionWeek";
+export const COMPETITION_RESULT = "CompetitionResult";
+export const APP_CONFIG = "AppConfig";
