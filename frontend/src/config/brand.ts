@@ -6,7 +6,8 @@ export const BRAND = {
     district: "Thạch Thất",
     fullName: "Trường THPT Hai Bà Trưng - Thạch Thất",
     appName: "Nền nếp & Thi đua",
-    founded: "7-2002",
+    /** Tháng đưa hệ thống vào sử dụng */
+    launched: "9-2026",
     logo: "/brand/logo.png",
     logoSmall: "/brand/logo-96.png",
     photos: {

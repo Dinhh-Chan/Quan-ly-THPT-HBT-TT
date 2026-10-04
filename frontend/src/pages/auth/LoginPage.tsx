@@ -48,10 +48,12 @@ export default function LoginPage() {
                 <div className="login-hero-content">
                     <img src={BRAND.logo} alt="" className="login-hero-logo" />
                     <div className="login-hero-authority">{BRAND.authority}</div>
-                    <div className="login-hero-school">{BRAND.schoolName}</div>
-                    <div className="login-hero-district">{BRAND.district}</div>
+                    <div className="login-hero-school">
+                        <span>{BRAND.schoolName}</span>
+                        <span className="login-hero-district">{BRAND.district}</span>
+                    </div>
                     <p className="login-hero-tagline">Hệ thống quản lý nền nếp &amp; thi đua</p>
-                    <div className="login-hero-founded">Thành lập {BRAND.founded}</div>
+                    <div className="login-hero-founded">Tạo tháng {BRAND.launched}</div>
                 </div>
                 <div className="brand-stripe login-hero-stripe" />
             </section>

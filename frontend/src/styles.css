@@ -144,6 +144,7 @@ body {
     left: 48px;
     right: 48px;
     bottom: 56px;
+    container-type: inline-size;
 }
 .login-hero-logo {
     width: 112px;
@@ -160,16 +161,23 @@ body {
 }
 .login-hero-school {
     margin-top: 4px;
-    font-size: 40px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    gap: 0.35em;
+    /* Tên trường và "Thạch Thất" luôn trên một hàng: chữ co theo bề rộng khung */
+    font-size: min(40px, 4.6cqi);
     font-weight: 800;
     line-height: 1.1;
     text-transform: uppercase;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 .login-hero-district {
-    margin-top: 6px;
-    display: inline-block;
-    padding: 4px 12px;
+    padding: 0.12em 0.4em;
+    font-size: 0.55em;
+    line-height: 1.2;
+    text-shadow: none;
     border-radius: 6px;
     background: var(--brand-green);
     font-weight: 700;
@@ -236,7 +244,7 @@ body {
     .login-hero-logo {
         width: 64px;
         height: 64px;
-        grid-row: span 3;
+        grid-row: span 2;
     }
     .login-hero-authority {
         grid-column: 2;
@@ -246,12 +254,10 @@ body {
     .login-hero-school {
         grid-column: 2;
         margin: 0;
-        font-size: 19px;
+        font-size: min(19px, 3.6cqi);
     }
     .login-hero-district {
-        grid-column: 2;
-        justify-self: start;
-        font-size: 12px;
+        font-size: 0.6em;
         padding: 2px 8px;
     }
     .login-hero-tagline,
