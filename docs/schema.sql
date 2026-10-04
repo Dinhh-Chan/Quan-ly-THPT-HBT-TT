@@ -58,6 +58,7 @@ CREATE TABLE "SchoolClass" (
     "name"              VARCHAR(20) NOT NULL,                 -- 10A1
     "grade"             SMALLINT NOT NULL CHECK ("grade" IN (10, 11, 12)),
     "homeroomTeacherId" VARCHAR(24) REFERENCES "User" ("_id") ON DELETE SET NULL,
+    "homeroomTeacherName" VARCHAR(255),
     "sortOrder"         SMALLINT NOT NULL DEFAULT 0,
     "createdAt"         TIMESTAMPTZ NOT NULL DEFAULT now(),
     "updatedAt"         TIMESTAMPTZ NOT NULL DEFAULT now(),

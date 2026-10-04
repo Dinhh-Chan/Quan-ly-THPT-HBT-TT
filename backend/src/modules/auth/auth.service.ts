@@ -208,16 +208,19 @@ export class AuthService extends BaseService<Auth, AuthRepository> {
 
     private async validatePassword(username: string, password: string) {
         const user = await this.userRepository.getOne(
-            { username },
+            { username: username.trim().toLowerCase() },
             { enableDataPartition: false },
         );
         if (user) {
             const match = await compareUserPassword(password, user.password);
             if (match) {
+                if (user.locked) {
+                    throw ApiError.Unauthorized("error-user-locked");
+                }
                 return user;
             }
         }
-        throw ApiError.Unauthorized("error-unauthorized");
+        throw ApiError.Unauthorized("error-login-failed");
     }
 
     async testAuth() {

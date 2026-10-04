@@ -52,6 +52,7 @@ export class AttendanceReport implements BaseEntity {
         label: "Người báo cáo (User._id)",
         required: true,
     })
+    @IsOptional()
     reporterId: string;
 
     @IsDateString()

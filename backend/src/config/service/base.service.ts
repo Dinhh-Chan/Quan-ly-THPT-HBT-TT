@@ -85,6 +85,10 @@ export class BaseService<
         } = {},
     ) {}
 
+    protected getTransaction(): BaseTransaction {
+        return this.property.transaction;
+    }
+
     getImportService(): BaseImportService<E, R> {
         return this.property.importService;
     }

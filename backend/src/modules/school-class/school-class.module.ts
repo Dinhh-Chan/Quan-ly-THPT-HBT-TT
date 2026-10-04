@@ -1,6 +1,7 @@
 import { SequelizeModule } from "@nestjs/sequelize";
 import { SchoolClassModel } from "@module/school-class/models/school-class.model";
 import { Module } from "@nestjs/common";
+import { SchoolYearModule } from "@module/school-year/school-year.module";
 import { RepositoryProvider } from "@module/repository/common/repository";
 import { TransactionProvider } from "@module/repository/common/transaction";
 import { Entity } from "@module/repository";
@@ -10,7 +11,7 @@ import { SqlTransaction } from "@module/repository/sequelize/sql.transaction";
 import { SchoolClassController } from "@module/school-class/controllers/school-class.controller";
 
 @Module({
-    imports: [SequelizeModule.forFeature([SchoolClassModel])],
+    imports: [SequelizeModule.forFeature([SchoolClassModel]), SchoolYearModule],
     exports: [SchoolClassService],
     providers: [
         SchoolClassService,

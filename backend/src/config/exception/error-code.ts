@@ -37,4 +37,12 @@ export type ErrorCode =
     | "error-event-log-already-checked-in"
     | "error-event-log-already-checked-out"
     | "error-event-log-identity-code-exist"
+    | "error-login-failed"
+    | "error-user-locked"
+    | "error-incident-no-student"
+    | "error-incident-photo-invalid"
+    | "error-duplicate-record"
+    | "error-related-record"
+    | "error-school-year-required"
+    | "error-scoring-rule-required"
     | FileErrorCode;

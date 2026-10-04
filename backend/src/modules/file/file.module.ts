@@ -26,5 +26,6 @@ import { FileMongoRepository } from "./repository/file-mongo.repository";
         TransactionProvider(MongoTransaction),
     ],
     controllers: [FileController, FilePublicController],
+    exports: [FileService],
 })
 export class FileModule {}

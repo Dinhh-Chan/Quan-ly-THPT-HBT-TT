@@ -180,6 +180,7 @@ export interface WeeklyReport {
     oralHigh: number;
     oralLow: number;
     logbookErrors: number;
+    /** Id học sinh bị ghi SĐB; một em bị ghi nhiều lần thì lặp lại */
     logbookErrorStudents?: string[];
     status: WeeklyReportStatus;
     submittedAt?: string;

@@ -39,6 +39,9 @@ export class SchoolClassModel extends Model implements SchoolClass {
     @Column({ type: DataType.STRING(24), allowNull: true })
     homeroomTeacherId?: string;
 
+    @Column({ type: DataType.STRING(255), allowNull: true })
+    homeroomTeacherName?: string;
+
     @Column({ type: DataType.INTEGER, allowNull: false, defaultValue: 0 })
     sortOrder?: number;
 }

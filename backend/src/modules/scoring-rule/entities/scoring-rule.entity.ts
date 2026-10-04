@@ -7,6 +7,7 @@ export class ScoringRule implements BaseEntity {
 
     @IsString()
     @EntityDefinition.field({ label: "Năm học", required: true })
+    @IsOptional()
     schoolYearId: string;
 
     @IsInt()

@@ -16,6 +16,7 @@ export class Complaint implements BaseEntity {
 
     @IsString()
     @EntityDefinition.field({ label: "Năm học", required: true })
+    @IsOptional()
     schoolYearId: string;
 
     @IsString()
@@ -60,6 +61,7 @@ export class Complaint implements BaseEntity {
 
     @IsString()
     @EntityDefinition.field({ label: "Người gửi (User._id)", required: true })
+    @IsOptional()
     createdById: string;
 
     @IsString()

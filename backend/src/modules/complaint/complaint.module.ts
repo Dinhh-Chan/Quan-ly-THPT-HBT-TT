@@ -1,6 +1,7 @@
 import { SequelizeModule } from "@nestjs/sequelize";
 import { ComplaintModel } from "@module/complaint/models/complaint.model";
 import { Module } from "@nestjs/common";
+import { SchoolYearModule } from "@module/school-year/school-year.module";
 import { RepositoryProvider } from "@module/repository/common/repository";
 import { TransactionProvider } from "@module/repository/common/transaction";
 import { Entity } from "@module/repository";
@@ -10,7 +11,7 @@ import { SqlTransaction } from "@module/repository/sequelize/sql.transaction";
 import { ComplaintController } from "@module/complaint/controllers/complaint.controller";
 
 @Module({
-    imports: [SequelizeModule.forFeature([ComplaintModel])],
+    imports: [SequelizeModule.forFeature([ComplaintModel]), SchoolYearModule],
     exports: [ComplaintService],
     providers: [
         ComplaintService,

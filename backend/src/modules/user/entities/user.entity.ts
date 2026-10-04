@@ -5,7 +5,13 @@ import { BaseEntity } from "@common/interface/base-entity.interface";
 import { Auth } from "@module/auth/entities/auth.entity";
 import { Entity } from "@module/repository";
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
-import { IsEmail, IsEnum, IsOptional, IsString } from "class-validator";
+import {
+    IsBoolean,
+    IsEmail,
+    IsEnum,
+    IsOptional,
+    IsString,
+} from "class-validator";
 import { HydratedDocument } from "mongoose";
 import { Gender, SystemRole } from "../common/constant";
 
@@ -46,9 +52,28 @@ export class User implements BaseEntity {
     ssoId?: string;
 
     @IsEmail({}, { message: "Email không đúng định dạng" })
-    @Prop({ required: true })
-    @EntityDefinition.field({ label: "Email", required: true })
-    email: string;
+    @IsOptional()
+    @Prop()
+    @EntityDefinition.field({ label: "Email" })
+    email?: string;
+
+    @IsString()
+    @IsOptional()
+    @Prop()
+    @EntityDefinition.field({ label: "Số điện thoại" })
+    phone?: string;
+
+    @IsBoolean()
+    @IsOptional()
+    @Prop({ default: false })
+    @EntityDefinition.field({ label: "Bắt đổi mật khẩu" })
+    mustChangePassword?: boolean;
+
+    @IsBoolean()
+    @IsOptional()
+    @Prop({ default: false })
+    @EntityDefinition.field({ label: "Đã khóa" })
+    locked?: boolean;
 
     @IsString()
     @IsOptional()

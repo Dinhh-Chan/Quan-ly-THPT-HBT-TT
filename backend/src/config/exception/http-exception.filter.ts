@@ -14,6 +14,7 @@ import { ConfigService } from "@nestjs/config";
 import { Request, Response } from "express";
 import moment from "moment";
 import { I18nService } from "nestjs-i18n";
+import { ForeignKeyConstraintError, UniqueConstraintError } from "sequelize";
 
 @Catch()
 export class HttpExceptionFilter implements ExceptionFilter {
@@ -40,6 +41,23 @@ export class HttpExceptionFilter implements ExceptionFilter {
         if (exception instanceof HttpException) {
             status = exception.getStatus();
             message = exception.message;
+            // ValidationPipe: trả chi tiết từng trường thay vì "Bad Request Exception"
+            const detail = (exception.getResponse() as { message?: unknown })
+                ?.message;
+            if (Array.isArray(detail) && detail.length) {
+                message = detail.join("; ");
+            }
+        }
+        if (
+            exception instanceof UniqueConstraintError ||
+            exception instanceof ForeignKeyConstraintError
+        ) {
+            code =
+                exception instanceof UniqueConstraintError
+                    ? "error-duplicate-record"
+                    : "error-related-record";
+            status = HttpStatus.BAD_REQUEST;
+            message = this.i18n.t(`error-message.${code}`);
         }
         if (!status) {
             status = HttpStatus.INTERNAL_SERVER_ERROR;

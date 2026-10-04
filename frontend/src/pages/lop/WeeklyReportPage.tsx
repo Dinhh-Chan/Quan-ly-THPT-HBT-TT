@@ -209,11 +209,11 @@ export default function WeeklyReportPage() {
                                 <InputNumber size="large" min={0} precision={0} style={{ width: "100%" }} inputMode="numeric" />
                             </Form.Item>
                             <Form.Item label="Học sinh bị ghi SĐB (để GVCN theo dõi)">
-                                <StudentPicker students={students} disabled={!editable} onPick={(s) => setErrorStudents((l) => [...l, s.fullname])} />
+                                <StudentPicker students={students} disabled={!editable} onPick={(s) => setErrorStudents((l) => [...l, s._id])} />
                                 <div style={{ marginTop: 8 }}>
-                                    {errorStudents.map((n, i) => (
-                                        <Tag key={`${n}-${i}`} closable={editable} onClose={() => setErrorStudents((l) => l.filter((_, j) => j !== i))}>
-                                            {n}
+                                    {errorStudents.map((id, i) => (
+                                        <Tag key={`${id}-${i}`} closable={editable} onClose={() => setErrorStudents((l) => l.filter((_, j) => j !== i))}>
+                                            {students.find((s) => s._id === id)?.fullname ?? id}
                                         </Tag>
                                     ))}
                                 </div>

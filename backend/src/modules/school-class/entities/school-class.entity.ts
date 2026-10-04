@@ -7,6 +7,7 @@ export class SchoolClass implements BaseEntity {
 
     @IsString()
     @EntityDefinition.field({ label: "Năm học", required: true })
+    @IsOptional()
     schoolYearId: string;
 
     @IsString()
@@ -27,6 +28,11 @@ export class SchoolClass implements BaseEntity {
     @IsOptional()
     @EntityDefinition.field({ label: "GVCN (User._id)" })
     homeroomTeacherId?: string;
+
+    @IsString()
+    @IsOptional()
+    @EntityDefinition.field({ label: "Tên GVCN" })
+    homeroomTeacherName?: string;
 
     @IsInt()
     @IsOptional()

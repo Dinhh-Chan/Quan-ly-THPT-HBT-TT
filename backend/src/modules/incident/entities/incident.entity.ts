@@ -66,6 +66,7 @@ export class Incident implements BaseEntity {
         label: "Người báo cáo (User._id)",
         required: true,
     })
+    @IsOptional()
     reporterId: string;
 
     @IsString()

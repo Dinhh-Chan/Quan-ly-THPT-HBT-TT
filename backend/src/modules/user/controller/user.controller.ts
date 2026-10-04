@@ -1,12 +1,16 @@
 import { RequestAuthData } from "@common/constant/class/request-auth-data";
 import { ApiRecordResponse } from "@common/decorator/api.decorator";
-import { ReqUser } from "@common/decorator/auth.decorator";
+import { AllowSystemRoles, ReqUser } from "@common/decorator/auth.decorator";
+import { SystemRole } from "../common/constant";
+import { ResetPasswordDto } from "../dto/reset-password.dto";
 import { BaseControllerFactory } from "@config/controller/base-controller-factory";
-import { Body, Controller, Get, Put, Req } from "@nestjs/common";
+import { Body, Controller, Get, Param, Put, Req } from "@nestjs/common";
 
 import { ApiTags } from "@nestjs/swagger";
 import { Request } from "express";
 import { ChangePasswordDto } from "../dto/change-password.dto";
+import { CreateUserDto } from "../dto/create-user.dto";
+import { UpdateUserDto } from "../dto/update-user.dto";
 import { User } from "../entities/user.entity";
 import { UserService } from "../service/user.service";
 
@@ -15,8 +19,8 @@ import { UserService } from "../service/user.service";
 export class UserController extends BaseControllerFactory<User>(
     User,
     null,
-    null,
-    null,
+    CreateUserDto,
+    UpdateUserDto,
     {
         import: {
             enable: false,
@@ -65,6 +69,17 @@ export class UserController extends BaseControllerFactory<User>(
         @Body() dto: ChangePasswordDto,
     ) {
         return this.userService.changePasswordMe(user, dto);
+    }
+
+    @Put(":id/reset-password")
+    @AllowSystemRoles(SystemRole.ADMIN)
+    @ApiRecordResponse(User)
+    async resetPassword(
+        @ReqUser() user: User,
+        @Param("id") id: string,
+        @Body() dto: ResetPasswordDto,
+    ) {
+        return this.userService.resetPassword(user, id, dto);
     }
 
     // @Get("test")

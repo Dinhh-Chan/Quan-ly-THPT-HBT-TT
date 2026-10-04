@@ -22,10 +22,12 @@ export class CompetitionWeek implements BaseEntity {
 
     @IsString()
     @EntityDefinition.field({ label: "Quy chế đã dùng", required: true })
+    @IsOptional()
     scoringRuleId: string;
 
     @IsString()
     @EntityDefinition.field({ label: "Người chốt (User._id)", required: true })
+    @IsOptional()
     lockedById: string;
 
     @IsDateString()

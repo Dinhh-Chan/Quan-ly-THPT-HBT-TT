@@ -47,6 +47,7 @@ export class ActivityPoint implements BaseEntity {
 
     @IsString()
     @EntityDefinition.field({ label: "Người nhập (User._id)", required: true })
+    @IsOptional()
     createdById: string;
 
     createdAt?: Date;

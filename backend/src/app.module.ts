@@ -44,11 +44,13 @@ import { ScoringCriterionModule } from "@module/scoring-criterion/scoring-criter
 import { CompetitionWeekModule } from "@module/competition-week/competition-week.module";
 import { CompetitionResultModule } from "@module/competition-result/competition-result.module";
 import { AppConfigModule } from "@module/app-config/app-config.module";
+import { LookupModule } from "@module/lookup/lookup.module";
 
 @Module({
     imports: [
         ...DefaultModules,
         AuthModule,
+        LookupModule,
         UserModule,
         EventAccountModule,
         OneSignalModule,

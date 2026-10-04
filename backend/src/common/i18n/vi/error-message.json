@@ -19,5 +19,13 @@
     "error-event-log-exist": "Nhật ký sự kiện đã tồn tại",
     "error-event-log-already-checked-in": "Người dùng đã check-in",
     "error-event-log-already-checked-out": "Người dùng đã check-out",
-    "error-event-log-identity-code-exist": "Mã định danh đã tồn tại"
+    "error-event-log-identity-code-exist": "Mã định danh đã tồn tại",
+    "error-login-failed": "Sai tên đăng nhập hoặc mật khẩu",
+    "error-user-locked": "Tài khoản đã bị khóa. Liên hệ cấp quản lý.",
+    "error-incident-no-student": "Sự việc phải có ít nhất một học sinh",
+    "error-incident-photo-invalid": "Ảnh không hợp lệ",
+    "error-duplicate-record": "Dữ liệu đã tồn tại (trùng)",
+    "error-related-record": "Dữ liệu đang được tham chiếu hoặc tham chiếu tới bản ghi không tồn tại",
+    "error-school-year-required": "Chưa có năm học hiện tại",
+    "error-scoring-rule-required": "Chưa có quy chế điểm cho năm học này"
 }

@@ -8,9 +8,17 @@ import { IncidentService } from "@module/incident/services/incident.service";
 import { IncidentSqlRepository } from "@module/incident/repositories/incident-sql.repository";
 import { SqlTransaction } from "@module/repository/sequelize/sql.transaction";
 import { IncidentController } from "@module/incident/controllers/incident.controller";
+import { IncidentStudentModule } from "@module/incident-student/incident-student.module";
+import { IncidentPhotoModule } from "@module/incident-photo/incident-photo.module";
+import { FileModule } from "@module/file/file.module";
 
 @Module({
-    imports: [SequelizeModule.forFeature([IncidentModel])],
+    imports: [
+        SequelizeModule.forFeature([IncidentModel]),
+        IncidentStudentModule,
+        IncidentPhotoModule,
+        FileModule,
+    ],
     exports: [IncidentService],
     providers: [
         IncidentService,

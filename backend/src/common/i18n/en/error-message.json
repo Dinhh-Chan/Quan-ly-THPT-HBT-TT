@@ -12,5 +12,13 @@
     "error-event-log-exist": "Event log already exists",
     "error-event-log-already-checked-in": "User already checked in",
     "error-event-log-already-checked-out": "User already checked out",
-    "error-event-log-identity-code-exist": "Identity code already exists"
+    "error-event-log-identity-code-exist": "Identity code already exists",
+    "error-login-failed": "Wrong username or password",
+    "error-user-locked": "Account is locked",
+    "error-incident-no-student": "Incident must have at least one student",
+    "error-incident-photo-invalid": "Invalid photo",
+    "error-duplicate-record": "Duplicate record",
+    "error-related-record": "Foreign key constraint failed",
+    "error-school-year-required": "No current school year",
+    "error-scoring-rule-required": "No scoring rule for this school year"
 }
