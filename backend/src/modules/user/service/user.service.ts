@@ -109,9 +109,8 @@ export class UserService
         if (!correctOldPassword) {
             throw ApiError.BadRequest("error-old-password-wrong");
         }
-        user.password = await createUserPassword(dto.newPass);
         const res = await this.userRepository.updateById(user._id, {
-            password: dto.oldPass,
+            password: await createUserPassword(dto.newPass),
         });
         return res;
     }
